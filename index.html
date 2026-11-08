@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>USFans spreadsheet: categorieën, maten en QC uitgelegd</title>
+<meta name="description" content="Verken de USFans spreadsheet met een Nederlandse keuzehulp voor sneakers, kleding en accessoires. Vergelijk maten, QC-foto’s en totale kosten.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#23483f">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:title" content="USFans spreadsheet — eerst vergelijken, dan kiezen">
+<meta property="og:description" content="Een onafhankelijke Nederlandse gids met tien categorieën, praktische koopchecks en heldere antwoorden over maten, QC en verzending.">
+<meta name="twitter:card" content="summary">
+<style>
+:root{--ink:#20332e;--green:#23483f;--paper:#f7f5ed;--line:#d6dcd0;--accent:#dced8f;--muted:#56655d}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+a{color:inherit;text-underline-offset:4px}
+a:focus-visible,summary:focus-visible{outline:3px solid #976010;outline-offset:5px}
+a:hover{color:#506c16}
+.wrap{width:min(1180px,92%);margin:auto}
+.top{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:24px 0;border-bottom:1px solid var(--line)}
+.logo{font-weight:850;font-size:21px;text-decoration:none;letter-spacing:-.6px}
+.eyebrow{font-size:12px;font-weight:750;letter-spacing:.13em;text-transform:uppercase}
+.muted,figcaption{color:var(--muted)}
+h1,h2,h3,p{margin:0 0 16px}
+h1{font-size:clamp(39px,5.8vw,76px);line-height:1.04;letter-spacing:-.055em;max-width:780px}
+h2{font-size:clamp(27px,3vw,39px);line-height:1.16;letter-spacing:-.035em}
+h3{font-size:20px;line-height:1.3}
+.intro{padding:44px 0 24px}
+.intro p{max-width:750px;font-size:18px}
+.categories{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line);margin:18px 0 34px}
+.categories a{padding:18px 14px;border-bottom:1px solid var(--line);border-right:1px solid var(--line);text-decoration:none;background:#fffdf6;font-weight:650;display:flex;flex-direction:column;justify-content:space-between;gap:9px;min-height:104px}
+.categories small{font-size:12px;font-weight:450;color:var(--muted)}
+.hero{display:grid;grid-template-columns:1.05fr 1fr;background:var(--green);color:white;margin-bottom:64px}
+.hero figure{margin:0;min-width:0;background:#fff}
+.hero img{display:block;width:100%;height:100%;max-height:460px;object-fit:contain}
+.hero .copy{padding:clamp(24px,4vw,48px);align-self:center}
+.hero h2{font-size:clamp(29px,3.5vw,46px)}
+.hero p{color:#e2eadd}
+.button{display:inline-block;text-decoration:none;font-weight:750;background:var(--accent);color:var(--ink);padding:13px 20px;border-radius:4px}
+.section{margin-bottom:64px}
+.section-head{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-bottom:24px}
+.section-head p{align-self:end;color:var(--muted)}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+figure{margin:0}
+.gallery img{width:100%;height:auto;aspect-ratio:1;object-fit:contain;background:white;border:1px solid var(--line)}
+figcaption{font-size:13px;padding-top:12px}
+.gallery h3{margin:8px 0}
+.gallery p{font-size:14px}
+.note{font-size:13px;color:var(--muted);padding:16px 0;border-bottom:1px solid var(--line)}
+.articles{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.articles article{border-top:3px solid var(--green);padding-top:19px}
+.number{font-size:13px;display:block;margin-bottom:15px;font-weight:750;color:var(--muted)}
+ul,ol{padding-left:22px}
+li{margin-bottom:9px}
+.table-scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;background:#fffdf7;font-size:15px}
+caption{text-align:left;font-weight:700;margin-bottom:12px}
+th,td{text-align:left;padding:16px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#e7ecdf}
+td:first-child{font-weight:650}
+.faq{display:grid;grid-template-columns:1fr 2fr;gap:40px}
+details{border-bottom:1px solid var(--line);padding:18px 0}
+summary{font-weight:700;cursor:pointer}
+details p{margin:14px 0 0}
+.closing{background:var(--accent);padding:32px;display:flex;justify-content:space-between;align-items:center;gap:24px}
+.closing p{margin:0}
+.closing a{white-space:nowrap;font-weight:750}
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:13px}
+.research{margin-top:24px;font-size:13px}
+.research p{max-width:950px}
+.research ol{columns:2;column-gap:40px}
+.research li{break-inside:avoid}
+.brand-note{font-size:13px;max-width:900px}
+@media(max-width:850px){
+.categories{grid-template-columns:repeat(3,1fr)}
+.gallery{grid-template-columns:repeat(2,1fr)}
+.articles{grid-template-columns:1fr}
+.hero{grid-template-columns:1fr 1fr}
+.hero .copy{padding:25px}
+.faq{grid-template-columns:1fr;gap:12px}
+}
+@media(max-width:580px){
+.top{align-items:flex-start;flex-direction:column;gap:5px;padding:18px 0}
+.intro{padding-top:30px}
+.categories{grid-template-columns:repeat(2,1fr)}
+.categories a{padding:13px;min-height:93px}
+.hero{grid-template-columns:1fr}
+.hero figure{order:0}
+.hero .copy{order:1}
+.hero img{max-height:300px}
+.section-head{grid-template-columns:1fr;gap:0}
+.gallery{gap:16px}
+.gallery h3{font-size:17px}
+.closing{display:block;padding:24px}
+.closing a{display:inline-block;margin-top:16px}
+.research ol{columns:1}
+.section,.hero{margin-bottom:44px}
+th,td{padding:12px;min-width:145px}
+}
+@media(prefers-reduced-motion:no-preference){
+a{transition:background-color .15s,color .15s}
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "name": "USFans spreadsheet: categorieën, maten en QC uitgelegd",
+      "inLanguage": "nl",
+      "description": "Onafhankelijke Nederlandse keuzehulp voor het vergelijken van productlinks, maten, QC-foto’s en totale kosten."
+    },
+    {
+      "@type": "Article",
+      "headline": "Van productlink naar een doordachte shortlist",
+      "inLanguage": "nl",
+      "author": {
+        "@type": "Organization",
+        "name": "HipobuyFind keuzegids"
+      },
+      "articleBody": "Begin met één productcategorie en noteer de productlink, uitvoering en maat. Vergelijk kledingmetingen met een passend kledingstuk. Bekijk bij beschikbare QC-foto’s de maatlabels, kleur, naden en zichtbare afwerking. Bereken de artikelprijs samen met binnenlandse bezorging, servicekosten, internationale verzending en mogelijke invoerkosten."
+    },
+    {
+      "@type": "FAQPage",
+      "inLanguage": "nl",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Wat is een USFans spreadsheet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Een USFans spreadsheet is doorgaans een verzameling productlinks met categorieën, foto’s en vergelijkingsinformatie voor mensen die via een shoppingagent willen winkelen. De inhoud en actualiteit verschillen per beheerder."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is dit de officiële USFans-website?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nee. Dit is een onafhankelijke Nederlandstalige keuzehulp. De categorieknoppen openen HipobuyFind. Deze pagina verwerkt geen bestellingen of betalingen en claimt geen officiële samenwerking met USFans of de afgebeelde merken."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kan ik hier een spreadsheet downloaden?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nee. Deze pagina biedt een leesbare gids en categorieoverzicht, geen Excel-bestand, Google Sheet of live productdatabase."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bewijzen QC-foto’s dat een artikel authentiek is?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nee. QC-foto’s kunnen zichtbare kenmerken laten zien, maar bewijzen geen authenticiteit, materiaalsamenstelling of duurzaamheid. Vraag bij merkartikelen om herkomstinformatie en controleer de verkoper."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hoe kies ik de juiste maat?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Vergelijk de maattabel van de specifieke aanbieding met je eigen metingen. Meet kleding plat en gebruik bij schoenen de aangegeven voetlengte. Vertrouw niet alleen op een lettermaat of je gebruikelijke EU-maat."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wat kost verzending naar Nederland of België?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dat hangt af van bestemming, vervoerder, pakketgewicht, afmetingen en beschikbare route. Vraag een actuele berekening op en controleer of btw, inklaringskosten en verzekering inbegrepen zijn."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<link rel="canonical" href="https://kakobuyfinds.github.io/wdnof/">
+</head>
+<body>
+<header class="wrap top">
+  <a class="logo" href="https://www.hipobuyfind.com">hipobuyfind.com</a>
+  <span class="eyebrow">Nederlandse keuzehulp · onafhankelijk</span>
+</header>
+
+<main class="wrap">
+  <section class="intro" aria-labelledby="titel">
+    <p class="eyebrow">Minder twijfelen. Beter vergelijken.</p>
+    <h1 id="titel">USFans spreadsheet.<br>Jouw stijl, met overzicht.</h1>
+    <p>Van sneakers tot een extra laag voor onderweg: begin bij een categorie en vergelijk daarna pas de details. Deze gids helpt je productlinks, maten en foto’s met een kritische blik te bekijken.</p>
+  </section>
+
+  <nav class="categories" aria-label="Productcategorieën op HipobuyFind">
+    <a href="https://hipobuyfind.com/category-911-Shoes.html">Shoes ↗<small>Sneakers en schoenen</small></a>
+    <a href="https://hipobuyfind.com/category-912-Hoodies%2FSweaters.html">Hoodies/Sweaters ↗<small>Hoodies en truien</small></a>
+    <a href="https://hipobuyfind.com/category-913-T-Shirts.html">T-Shirts ↗<small>Basisstukken en prints</small></a>
+    <a href="https://hipobuyfind.com/category-914-Jackets.html">Jackets ↗<small>Jassen en laagjes</small></a>
+    <a href="https://hipobuyfind.com/category-915-Pants%2FShorts.html">Pants/Shorts ↗<small>Broeken en shorts</small></a>
+    <a href="https://hipobuyfind.com/category-916-Headwear.html">Headwear ↗<small>Petten en hoofddeksels</small></a>
+    <a href="https://hipobuyfind.com/category-917-Sets.html">Sets ↗<small>Bijpassende combinaties</small></a>
+    <a href="https://hipobuyfind.com/category-918-underwear%2Funderpants.html">Underwear/underpants ↗<small>Ondergoed en pasvorm</small></a>
+    <a href="https://hipobuyfind.com/category-919-Jersey.html">Jersey ↗<small>Sportshirts en teamstijl</small></a>
+    <a href="https://hipobuyfind.com/category-920-Accessories.html">Accessories ↗<small>Kleine details, eigen karakter</small></a>
+  </nav>
+
+  <section class="hero" aria-labelledby="hero-titel">
+    <div class="copy">
+      <p class="eyebrow">De basis van je shortlist</p>
+      <h2 id="hero-titel">Een goede vondst begint bij de pasvorm.</h2>
+      <p>Een foto geeft richting. De maattabel, materiaalinformatie en voorwaarden bepalen of een artikel bij je past. Gebruik deze USFans spreadsheet gids als controlelijst voordat je verdergaat.</p>
+      <a class="button" href="https://www.hipobuyfind.com">Verken HipobuyFind ↗</a>
+    </div>
+    <figure>
+      <img src="https://resources.claroshop.com/medios-plazavip/s2/30561/3550724/62153c292de88-107840-1600x1600.jpg" alt="Witte lage Nike sneakers met witte veters en een Swoosh aan de zijkant" width="640" height="640" fetchpriority="high" loading="eager" decoding="async">
+    </figure>
+  </section>
+
+  <section class="section" aria-labelledby="stijl">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Visueel notitieboek</p>
+        <h2 id="stijl">Sportief fundament.<br>Een persoonlijk detail.</h2>
+      </div>
+      <p>Bekijk vorm, kleur en verhoudingen. De beelden hieronder zijn stijlreferenties; ze zijn geen bewijs van beschikbaarheid of authenticiteit van artikelen op de bestemmingssite.</p>
+    </div>
+
+    <div class="gallery">
+      <figure>
+        <img src="https://us.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-denim-cap--M5451M_PM1_Worn%20view.png?hei=640&amp;wid=640" alt="Model met een groene Louis Vuitton monogrampet en een sjaal bij een grijze top" width="640" height="640" loading="lazy" decoding="async">
+        <figcaption>01 / Louis Vuitton</figcaption>
+        <h3>Kleur als verbindende lijn</h3>
+        <p>Laat een pet of sjaal terugkomen in de kleur van je bovenkleding. Vergelijk de tint ook op foto’s in daglicht.</p>
+      </figure>
+      <figure>
+        <img src="https://media.gucci.com/style/HEXFBFBFB_South_0_160_640x640/1751298339/838745_3HBC4_2600_001_100_0000_Light.jpg" alt="Beige en bruine Gucci baseballpet met GG-dessin" width="640" height="640" loading="lazy" decoding="async">
+        <figcaption>02 / Gucci</figcaption>
+        <h3>De juiste verhouding</h3>
+        <p>Bij petten tellen hoofdomtrek, verstelbaarheid en klepdiepte. Een maatlabel vertelt niet hoe hoog het model zit.</p>
+      </figure>
+      <figure>
+        <img src="https://www.luxe-em.com/cdn/shop/files/001_3e78aa64-04f3-4ec6-81eb-e3aad7cdb5bc.jpg?v=1759779439&amp;width=640" alt="Oranje Hermès zijden carré met een decoratief patroon van sleutels en kwasten" width="640" height="640" loading="lazy" decoding="async">
+        <figcaption>03 / Hermès</figcaption>
+        <h3>Textuur naast eenvoud</h3>
+        <p>Een uitgesproken sjaal werkt bij rustige kleding. Controleer afmetingen, vezelsamenstelling en onderhoudsadvies.</p>
+      </figure>
+      <figure>
+        <img src="https://assets.christiandior.com/is/image/diorprod/N1583DVOCYD301_E01?wid=640&amp;hei=640" alt="Goudkleurige Dior ketting met witte kristallen en DIOR-letters" width="640" height="640" loading="lazy" decoding="async">
+        <figcaption>04 / Dior</figcaption>
+        <h3>Een detail dichtbij</h3>
+        <p>Controleer bij sieraden de lengte, sluiting en materiaalvermelding. Een goudkleurige afwerking betekent niet dat iets van massief goud is.</p>
+      </figure>
+    </div>
+    <p class="note">Beeldbronnen: Claroshop, Louis Vuitton, Gucci, Luxe &amp; Em en Dior. Merknamen dienen uitsluitend ter herkenning van de afgebeelde voorbeelden. Er wordt geen samenwerking of goedkeuring gesuggereerd.</p>
+  </section>
+
+  <section class="section" aria-labelledby="gids">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Praktische gids</p>
+        <h2 id="gids">Van productlink naar een doordachte shortlist</h2>
+      </div>
+      <p>Wie zoekt naar USFans finds, USFans productlinks, USFans QC foto’s of een USFans koopgids heeft vooral behoefte aan controleerbare informatie. Werk met deze drie korte artikelen.</p>
+    </div>
+
+    <div class="articles">
+      <article>
+        <span class="number">ARTIKEL 01 / SELECTEREN</span>
+        <h3>Bewaar de uitvoering, niet alleen de foto</h3>
+        <p>Een bruikbare shortlist bevat de productlink, gekozen kleur, maat, verkoper en de datum van je controle. Eén aanbieding kan meerdere uitvoeringen bevatten; de eerste afbeelding hoort niet automatisch bij de geselecteerde variant.</p>
+        <p>Zoek je een USFans spreadsheet voor sneakers of een kledingoverzicht? Begin met één categorie. Vergelijk vervolgens enkele kandidaten op dezelfde eigenschappen, in plaats van steeds meer links te bewaren.</p>
+        <ul>
+          <li>Vergelijk sneakers op voetlengte en zoolprofiel.</li>
+          <li>Bekijk bij hoodies de borstbreedte en stofdikte.</li>
+          <li>Noteer bij jassen de schouderbreedte en ruimte voor laagjes.</li>
+        </ul>
+      </article>
+
+      <article>
+        <span class="number">ARTIKEL 02 / CONTROLEREN</span>
+        <h3>Lees QC-foto’s als een visuele controle</h3>
+        <p>QC staat voor quality control: een inspectie van zichtbare eigenschappen. Zijn er foto’s van het daadwerkelijke artikel, controleer dan uitvoering, maatlabel, naden en eventuele beschadigingen. Verkopersfoto’s en magazijnfoto’s hebben een andere functie.</p>
+        <p>USFans QC foto’s vergelijken helpt alleen wanneer duidelijk is welke productlink en variant erbij horen. Een foto van een andere bestelling bewijst niets over jouw exemplaar. Vraag extra beelden als een detail ontbreekt.</p>
+        <ul>
+          <li>Controleer links en rechts bij schoenen.</li>
+          <li>Bekijk prints, borduursels en sluitingen van dichtbij.</li>
+          <li>Laat onduidelijke maten opnieuw opmeten.</li>
+        </ul>
+      </article>
+
+      <article>
+        <span class="number">ARTIKEL 03 / BEGROTEN</span>
+        <h3>Reken verder dan de artikelprijs</h3>
+        <p>Maak vóór het bestellen een totaalbegroting: artikelprijs, binnenlandse bezorging, eventuele servicekosten, internationale verzending en mogelijke invoerkosten. Controleer ook betaal- en wisselkoerskosten.</p>
+        <p>Voor verzending naar Nederland of België zijn gewicht, pakketafmetingen en route relevant. Een USFans verzendkosten schatting is een momentopname. Controleer actuele voorwaarden bij de dienst die de bestelling werkelijk verwerkt.</p>
+        <ul>
+          <li>Vraag of de route op werkelijk of volumegewicht rekent.</li>
+          <li>Controleer btw, inklaring en de dekking bij verlies.</li>
+          <li>Lees retourtermijnen voordat je een artikel bestelt.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="check">
+    <p class="eyebrow">Een vergelijking die iets oplevert</p>
+    <h2 id="check">Wat controleer je per categorie?</h2>
+    <div class="table-scroll">
+      <table>
+        <caption>Gebruik dezelfde meetpunten voor elke kandidaat op je lijst.</caption>
+        <thead>
+          <tr>
+            <th scope="col">Categorie</th>
+            <th scope="col">Controleer eerst</th>
+            <th scope="col">Vraag bij twijfel</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Schoenen</th>
+            <td>Voetlengte, leest, zool en maatlabel</td>
+            <td>Binnenzoollengte en foto’s van hiel en onderzijde</td>
+          </tr>
+          <tr>
+            <th scope="row">Hoodies en T-shirts</th>
+            <td>Borstbreedte, ruglengte en materiaalsamenstelling</td>
+            <td>Platte metingen en detail van print of borduursel</td>
+          </tr>
+          <tr>
+            <th scope="row">Jassen en sets</th>
+            <td>Schouders, mouwen, voering en afzonderlijke maten</td>
+            <td>Of boven- en onderstuk apart gekozen kunnen worden</td>
+          </tr>
+          <tr>
+            <th scope="row">Broeken en shorts</th>
+            <td>Taille, binnenbeenlengte en pasvorm</td>
+            <td>Rek in de tailleband en de gebruikte meetmethode</td>
+          </tr>
+          <tr>
+            <th scope="row">Petten en accessoires</th>
+            <td>Omtrek, lengte, sluiting en materiaal</td>
+            <td>Verstelbereik en duidelijke detailfoto’s</td>
+          </tr>
+          <tr>
+            <th scope="row">Ondergoed en jerseys</th>
+            <td>Maattabel, stof, uitvoering en personalisatie</td>
+            <td>Hygiënevoorwaarden en retourregels bij bedrukking</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section faq" aria-labelledby="vragen">
+    <div>
+      <p class="eyebrow">Direct antwoord</p>
+      <h2 id="vragen">Veelgestelde vragen</h2>
+      <p class="muted">Voor je eerste vergelijking én de laatste controle.</p>
+    </div>
+    <div>
+      <details open>
+        <summary>Wat is een USFans spreadsheet?</summary>
+        <p>Een USFans spreadsheet is doorgaans een verzameling productlinks met categorieën, foto’s en vergelijkingsinformatie voor mensen die via een shoppingagent willen winkelen. De inhoud en actualiteit verschillen per beheerder.</p>
+      </details>
+      <details>
+        <summary>Is dit de officiële USFans-website?</summary>
+        <p>Nee. Dit is een onafhankelijke Nederlandstalige keuzehulp. De categorieknoppen openen HipobuyFind. Deze pagina verwerkt geen bestellingen of betalingen en claimt geen officiële samenwerking met USFans of de afgebeelde merken.</p>
+      </details>
+      <details>
+        <summary>Kan ik hier een spreadsheet downloaden?</summary>
+        <p>Nee. Deze pagina biedt een leesbare gids en categorieoverzicht, geen Excel-bestand, Google Sheet of live productdatabase.</p>
+      </details>
+      <details>
+        <summary>Bewijzen QC-foto’s dat een artikel authentiek is?</summary>
+        <p>Nee. QC-foto’s kunnen zichtbare kenmerken laten zien, maar bewijzen geen authenticiteit, materiaalsamenstelling of duurzaamheid. Vraag bij merkartikelen om herkomstinformatie en controleer de verkoper.</p>
+      </details>
+      <details>
+        <summary>Hoe kies ik de juiste maat?</summary>
+        <p>Vergelijk de maattabel van de specifieke aanbieding met je eigen metingen. Meet kleding plat en gebruik bij schoenen de aangegeven voetlengte. Vertrouw niet alleen op een lettermaat of je gebruikelijke EU-maat.</p>
+      </details>
+      <details>
+        <summary>Wat kost verzending naar Nederland of België?</summary>
+        <p>Dat hangt af van bestemming, vervoerder, pakketgewicht, afmetingen en beschikbare route. Vraag een actuele berekening op en controleer of btw, inklaringskosten en verzekering inbegrepen zijn.</p>
+      </details>
+    </div>
+  </section>
+
+  <aside class="section closing">
+    <div>
+      <h2>Kies één categorie. Maak een betere shortlist.</h2>
+      <p>Bekijk de actuele vermeldingen en controleer de details op de bestemmingssite.</p>
+    </div>
+    <a href="https://www.hipobuyfind.com">Verder naar HipobuyFind ↗</a>
+  </aside>
+
+  <section class="section research" aria-labelledby="onderzoek">
+    <details>
+      <summary id="onderzoek">Redactionele basis en zoekonderwerpen</summary>
+      <p>Voor deze gids zijn tien openbare zoekbronnen over USFans spreadsheet bekeken. Een vaste Google-eerste-paginavolgorde kon niet worden vastgesteld; resultaten verschillen per locatie en moment. Onderstaande thema’s zijn samengevat, zonder productaantallen, kortingen of kwaliteitsclaims over te nemen.</p>
+      <ol>
+        <li>usfansfashion.com — productoverzicht, categorieën en productlinks.</li>
+        <li>usfansspreadsheet.net — doorzoekbare catalogus en QC-informatie.</li>
+        <li>usfansspreadsheet.gg — kledingcategorieën en mobiele navigatie.</li>
+        <li>usfans.guru — artikelbeelden en categorie-indeling.</li>
+        <li>usfans-spreadsheets.com — selecteren, controleren en verzenden.</li>
+        <li>usfansbuys.com — beginnersvragen en het bestelproces.</li>
+        <li>usfanswithqc.com — onderscheid tussen verkopersfoto’s en QC.</li>
+        <li>usfansspreadsheet.coupons — koopgidsen en kwaliteitscontrole.</li>
+        <li>usfans.digital — shortlistbeheer en verzendplanning.</li>
+        <li>usfanfinds.com — productvelden en visuele inspectie.</li>
+      </ol>
+      <p><strong>Vier aanvullende zoekthema’s:</strong> USFans finds, USFans productlinks, USFans QC foto’s en USFans koopgids.</p>
+    </details>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong>hipobuyfind.com · Nederlandse keuzehulp</strong></p>
+    <p class="brand-note">Onafhankelijke informatie voor bezoekers die zoeken naar USFans spreadsheet. Bestemming van algemene links: HipobuyFind. Controleer zelf of een productlink door je gekozen shoppingdienst wordt ondersteund. Afbeeldingen zijn externe stijlreferenties; voorraad, prijzen, authenticiteit en levering worden hier niet gegarandeerd.</p>
+    <a href="https://www.hipobuyfind.com">Open HipobuyFind ↗</a>
+  </div>
+</footer>
+</body>
+</html>
